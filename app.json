@@ -6,10 +6,23 @@
     "orientation": "portrait",
     "userInterfaceStyle": "light",
     "android": {
-      "package": "com.civiclens.app"
+      "package": "com.civiclens.app",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyB9QNFjNzU0bP_vdo3F_0-JCi0Mok9nLgg"
+        }
+      }
     },
     "ios": {
       "bundleIdentifier": "com.civiclens.app"
+    },
+    "plugins": [
+      "expo-dev-client"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "f6032b0e-d686-4bdb-bfc0-2f445077b75f"
+      }
     }
   }
 }
