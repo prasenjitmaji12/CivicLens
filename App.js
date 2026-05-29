@@ -1,9 +1,9 @@
 import React, { useState } from "react";
+import { SafeAreaProvider, SafeAreaView  } from "react-native-safe-area-context";
 import {
   Alert,
   FlatList,
   Pressable,
-  SafeAreaView,
   ScrollView,
   StyleSheet,
   Text,
@@ -449,28 +449,31 @@ export default function App() {
   if (tab === "Success") screen = <SuccessScreen />;
 
   return (
-    <View style={{ flex: 1 }}>
-      <StatusBar style="dark" />
-      {screen}
 
-      {!["Filters", "About", "Success"].includes(tab) && (
-        <View style={styles.tabBar}>
-          {[
-            ["Map", "map-outline"],
-            ["Report", "shield-checkmark-outline"],
-            ["My Reports", "briefcase-outline"],
-            ["Profile", "person-outline"],
-          ].map(([name, icon]) => (
-            <Pressable key={name} style={styles.tabItem} onPress={() => setTab(name)}>
-              <Ionicons name={icon} size={22} color={tab === name ? C.blue : C.muted} />
-              <Text style={[styles.tabText, tab === name && { color: C.blue, fontWeight: "900" }]}>
-                {name}
-              </Text>
-            </Pressable>
-          ))}
-        </View>
-      )}
-    </View>
+    <SafeAreaProvider>
+      <View style={{ flex: 1 }}>
+        <StatusBar style="dark" />
+        {screen}
+
+        {!["Filters", "About", "Success"].includes(tab) && (
+          <View style={styles.tabBar}>
+            {[
+              ["Map", "map-outline"],
+              ["Report", "shield-checkmark-outline"],
+              ["My Reports", "briefcase-outline"],
+              ["Profile", "person-outline"],
+            ].map(([name, icon]) => (
+              <Pressable key={name} style={styles.tabItem} onPress={() => setTab(name)}>
+                <Ionicons name={icon} size={22} color={tab === name ? C.blue : C.muted} />
+                <Text style={[styles.tabText, tab === name && { color: C.blue, fontWeight: "900" }]}>
+                  {name}
+                </Text>
+              </Pressable>
+            ))}
+          </View>
+        )}
+      </View>
+    </SafeAreaProvider>
   );
 }
 
