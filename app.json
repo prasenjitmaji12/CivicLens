@@ -14,7 +14,10 @@
       }
     },
     "ios": {
-      "bundleIdentifier": "com.civiclens.app"
+      "bundleIdentifier": "com.civiclens.app",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "plugins": [
       "expo-dev-client"
