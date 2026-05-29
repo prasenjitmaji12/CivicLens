@@ -1,0 +1,15 @@
+{
+  "expo": {
+    "name": "CivicLens",
+    "slug": "civiclens",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "android": {
+      "package": "com.civiclens.app"
+    },
+    "ios": {
+      "bundleIdentifier": "com.civiclens.app"
+    }
+  }
+}
